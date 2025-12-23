@@ -1,0 +1,13 @@
+# Security for uploads directory
+# Prevent execution of PHP files in uploads folder
+
+<FilesMatch "\.(php|php3|php4|php5|phtml)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Allow image files only
+<FilesMatch "\.(jpg|jpeg|png|gif|webp)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
